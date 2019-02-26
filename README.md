@@ -1,29 +1,7 @@
-puppet-role_nextcloud
+docker_mattermost 
 =====================
-Puppet role definition for deployment of naturalis mattermost server.
+docker-compose definition for deployment of naturalis mattermost server.
 
-Parameters
--------------
-Sensible defaults for Naturalis in init.pp.
-
-```
-- enablessl                   Enable apache SSL modules, see SSL example
-- docroot                     Documentroot, match location with 'docroot' part of the instances parameter
-- mysql_root_password         Root password for mysql server
-- mysql_mattermost_user       Mattermost database user
-- mysql_mattermost_password   Mattermost database password
-- cron                        Enable hourly cronjob for drupal installation.
-```
-
-
-Classes
--------------
-- role_mattermost
-
-
-Dependencies
--------------
-- 
 
 Docker-compose
 --------------
