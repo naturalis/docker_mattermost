@@ -19,12 +19,6 @@ services:
 
   app:
     image: mattermost/mattermost-prod-app
-      context: app
-      # uncomment following lines for team edition or change UID/GID
-      # args:
-      #   - edition=team
-      #   - PUID=1000
-      #   - PGID=1000
     restart: unless-stopped
     logging:
       driver: "json-file"
