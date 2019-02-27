@@ -78,7 +78,7 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - ${BASE_PATH:-/data}/traefiklogs/traefik.log:/var/log/traefik.log
-      - ${BASE_PATH:-/data}/traefikconfig/traefik.toml}:/traefik.toml
+      - ${TRAEFIK_TOML_FILE:-./traefik.toml}:/traefik.toml
       - ${CERTDIR:-/etc/letsencrypt}:/etc/letsencrypt
 
 networks:
