@@ -47,7 +47,7 @@ services:
     labels:
       - "traefik.backend=naturalis-mattermost"
       - "traefik.enable=true"
-      - "traefik.port=8000"
+      - "traefik.port=80"
       - "${SITE_URL:-traefik.frontend.rule=Host:chat.museum.naturalis.nl}"
     volumes:
       # This directory must have cert files if you want to enable SSL
