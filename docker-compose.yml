@@ -45,6 +45,7 @@ services:
         max-size: '10m'
         max-file: '5'
     labels:
+      - traefik.enable=${TRAEFIK_ENABLE:-true}
       - traefik.http.routers.mattermost.entrypoints=https
       - traefik.http.routers.mattermost.tls.certresolver=${TRAEFIK_CERT_RESOLVER:-route53}
       - traefik.http.routers.mattermost.tls=true
