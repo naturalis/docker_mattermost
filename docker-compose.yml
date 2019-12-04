@@ -3,7 +3,7 @@ version: '3'
 services:
 
   db:
-    image: mattermost/mattermost-prod-db:5.17.1
+    image: mattermost/mattermost-prod-db:5.16.3
     read_only: true
     restart: unless-stopped
     logging:
@@ -18,7 +18,7 @@ services:
       - .env
 
   app:
-    image: mattermost/mattermost-prod-app:5.17.1
+    image: mattermost/mattermost-prod-app:5.16.3
     restart: unless-stopped
     logging:
       driver: "json-file"
@@ -36,7 +36,7 @@ services:
       - .env
 
   web:
-    image: mattermost/mattermost-prod-web:5.17.1
+    image: mattermost/mattermost-prod-web:5.16.3
     read_only: true
     restart: unless-stopped
     logging:
