@@ -45,10 +45,10 @@ services:
         max-size: '10m'
         max-file: '5'
     labels:
-      - "traefik.backend=naturalis-mattermost"
-      - "traefik.enable=true"
-      - "traefik.port=80"
-      - "${SITE_URL:-Host(`chat.museum.naturalis.nl`)}"
+      - traefik.http.routers.mattermost.entrypoints=https
+      - traefik.http.routers.mattermost.tls.certresolver=${TRAEFIK_CERT_RESOLVER:-route53}
+      - traefik.http.routers.mattermost.tls=true
+      - traefik.http.routers.mattermost.rule=${SITE_URL:-Host(`chat.infra.naturalis.nl`)}
     volumes:
       # This directory must have cert files if you want to enable SSL
       - ${BASE_PATH:-/data}/web/cert:/cert:ro
